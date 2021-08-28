@@ -6,14 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="css/login.css">
   <link rel="shortcut icon" href="./img/favicon_bibliofateca.png" type="image/x-icon">
 </head>
 
 
-<a class="logofatec"><img src="/img/logo_bibliofateca.png" alt="logo"></a>
+<img src="img/logo_bibliofateca.png" class="logofatec" alt="logo"> </img>
 
 <body class="login-body">
+
+  
 
   <style>
     * {
@@ -24,7 +26,7 @@
     }
   </style>
 
-  <!-- <form class="login-form"> -->
+  <div class="login-form">
 
     <h1>Login</h1>
     <div class="textb">
@@ -42,13 +44,14 @@
       <div class="fas fa-check"></div>
       Manter-se logado
     </div>
-    <button class="btn fas fa-arrow-right" onclick="teste()">ENVIAR</button>
+    <button class="btn fas fa-arrow-right" disabled onclick="teste()"></button>
 
     <a href="#"> Não consegue entrar? <br> Clique aqui</a>
-  <!-- </form> -->
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="index.js"></script>
+
 
   <script>
     function teste() {
@@ -61,29 +64,35 @@
         }
       });
     }
-    // var fields = document.querySelectorAll(".textb input");
-    // var btn = document.querySelector(".btn");
-    // function check() {
-    //   if (fields[0].value != "" && fields[1].value != "")
-    //     btn.disabled = false;
-    //   else
-    //     btn.disabled = true;
-    // }
 
-    // fields[0].addEventListener("keyup", check);
-    // fields[1].addEventListener("keyup", check);
+     var fields = document.querySelectorAll(".textb input");
+     var btn = document.querySelector(".btn");
+     function check() {
+       if (fields[0].value != "" && fields[1].value != "")
+         btn.disabled = false;
+       else
+         btn.disabled = true;
+     }
 
-    // document.querySelector(".show-password").addEventListener("click", function () {
-    //   if (this.classList[2] == "fa-eye-slash") {
-    //     this.classList.remove("fa-eye-slash");
-    //     this.classList.add("fa-eye");
-    //     fields[1].type = "text";
-    //   } else {
-    //     this.classList.remove("fa-eye");
-    //     this.classList.add("fa-eye-slash");
-    //     fields[1].type = "password";
-    //   }
-    // });
+     fields[0].addEventListener("keyup", check);
+     fields[1].addEventListener("keyup", check);
+
+     document.querySelector(".show-password").addEventListener("click", function () {
+       if (this.classList[2] == "fa-eye-slash") {
+         this.classList.remove("fa-eye-slash");
+         this.classList.add("fa-eye");
+         fields[1].type = "text";
+       } else {
+         this.classList.remove("fa-eye");
+         this.classList.add("fa-eye-slash");
+         fields[1].type = "password";
+       }
+     });
+
+   
+
+
+
   </script>
 </body>
 

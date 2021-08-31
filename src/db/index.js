@@ -17,12 +17,12 @@ con.connect((err) => {
 })
 
 con.query(
-    'SELECT b.id, b.title, a.name, a.location FROM book as b INNER JOIN author as a ON b.author = a.id', 
+    'SELECT * FROM livros', 
     (err, rows) => {
     if (err) throw err
 
     rows.forEach(row => {
-        console.log(`${row.title} by ${row.name}, ${row.location}`)
+        console.log(`${row.id}, ${row.categoria}, ${row.isbn}, ${row.titulo}`)
     });
 })
 
